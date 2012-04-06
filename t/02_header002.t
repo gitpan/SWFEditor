@@ -2,32 +2,39 @@ use t::Utils;
 use Test::More;
 use SWFEditor;
 
-my $expect = get_file_contents('/swf/edit001.swf');
+my $expect = {
+    compress => 1,
+    version  => 5,
+    x_min    => 10,
+    y_min    => 10,
+    x_max    => 150,
+    y_max    => 150,
+};
 
-{
+tests {
     my $d1    = get_file_contents('/resource/textvar.swf');
     my $swfed = SWFEditor->new();
     $swfed->input(\$d1);
-    $swfed->replace_edit_string(2, 'hello world');
-    my $got = $swfed->output();
-    is (
+    $swfed->set_header_info($expect);
+    my $got = $swfed->get_header_info();
+    is_deeply(
         $got,
         $expect,
-        'action001.phpt'
+        '',
     );
-}
+};
 
-{
+tests {
     my $d1    = get_file_path('/resource/textvar.swf');
     my $swfed = SWFEditor->new();
     $swfed->input($d1);
-    $swfed->replace_edit_string(2, 'hello world');
-    my $got = $swfed->output();
-    is (
+    $swfed->set_header_info($expect);
+    my $got = $swfed->get_header_info();
+    is_deeply(
         $got,
         $expect,
-        'action001.phpt'
+        '',
     );
-}
+};
 
 done_testing();

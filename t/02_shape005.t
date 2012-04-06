@@ -2,32 +2,32 @@ use t::Utils;
 use Test::More;
 use SWFEditor;
 
-my $expect = get_file_contents('/swf/shape004.swf');
+my $expect = get_file_contents('/swf/shape005.swf');
 
-{
+tests {
     my $d1    = get_file_contents('/resource/negimiku.swf');
     my $swfed = SWFEditor->new();
     $swfed->input(\$d1);
-    $swfed->apply_shape_matrix_factor(4, 0.9, 0.5, 45, 10, 10);
+    $swfed->apply_shape_rect_factor(6, 0.5, 0.5, 1, 1);
     my $got = $swfed->output();
     is (
         $got,
         $expect,
         ''
     );
-}
+};
 
-{
+tests {
     my $d1    = get_file_path('/resource/negimiku.swf');
     my $swfed = SWFEditor->new();
     $swfed->input($d1);
-    $swfed->apply_shape_matrix_factor(4, 0.9, 0.5, 45, 10, 10);
+    $swfed->apply_shape_rect_factor(6, 0.5, 0.5, 1, 1);
     my $got = $swfed->output();
     is (
         $got,
         $expect,
         ''
     );
-}
+};
 
 done_testing();
