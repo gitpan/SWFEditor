@@ -4,7 +4,7 @@ use 5.008;
 use strict;
 use warnings;
 
-our $VERSION       = '0.03';
+our $VERSION       = '0.03_01';
 our $SWFED_VERSION = '0.56';
 
 require XSLoader;
@@ -200,6 +200,16 @@ sub remove_tag {
     return $self->_remove_tag($tag_seqno, $tag_seqno_in_sprite);
 }
 
+sub replace_mld_data {
+    my $self     = shift;
+    my $sound_id = shift;
+    my $data     = shift;
+    return $self->_replace_mld_data (
+        $sound_id,
+        _load($data),
+    );
+}
+
 sub _load {
     my $input = shift;
     if (ref($input) eq 'SCALAR') {
@@ -346,7 +356,7 @@ Implemented function list
 
 =item $swfed->get_png_data(int $image_id)
 
-=item $swfed->replace_bitmap_data(hashref \%image_cond | $image_id, string $bitmapdata, string $alphadata = undef, \%opts)
+=item $swfed->replace_bitmap_data(hashref \%image_cond | $image_id, string $bitmapdata, string $alphadata = undef, hashref \%opts | int $without_converting)
 
 =item $swfed->replace_png_data($image_id, $pngdata)
 

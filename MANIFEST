@@ -1,11 +1,13 @@
 build.sh
 Changes
+inc/Devel/CheckLib.pm
 lib/SWFEditor.pm
 Makefile.PL
 MANIFEST			This list of files
 MANIFEST.SKIP
 ppport.h
 README.pod
+script/generate_info.pl
 src/bitmap_util.c
 src/bitmap_util.h
 src/bitstream.c
@@ -126,23 +128,21 @@ t/01_movieclip002.t
 t/01_movieclip003.t
 t/01_movieclip004.t
 t/01_png001.t
-t/01_swfinfo001.pl
 t/01_swfinfo001.t
 t/01_tag001.t
 t/01_tag002.t
-t/02_bitmap101.t
-t/02_bitmap102.t
-t/02_bitmap103.t
-t/02_bitmap104.t
-t/02_bitmap105.t
-t/02_bitmap106.t
+t/02_action001.t
+t/02_compress001.t
 t/02_convert001.t
 t/02_header001.t
 t/02_header002.t
+t/02_jpeg001.t
+t/02_jpeg002.t
 t/02_png002.t
 t/02_png003.t
 t/02_png004.t
 t/02_png005.t
+t/02_png006.t
 t/02_shape001.t
 t/02_shape002.t
 t/02_shape003.t
@@ -152,7 +152,15 @@ t/02_tag101.t
 t/02_tag102.t
 t/02_tag103.t
 t/02_tag104.t
+t/02_tag105.t
+t/02_tag106.t
+t/02_tag107.t
+t/02_tag108.t
+t/02_tag109.t
+t/action/textvar.action.1
 t/alpha/negimiku.alpha.3
+t/image/jpeg002.jpg
+t/image/png006.png
 t/resource/4color-300.swf
 t/resource/5.jpg
 t/resource/colorformat.swf
@@ -180,6 +188,7 @@ t/swf/bitmap102.swf
 t/swf/bitmap103.swf
 t/swf/bitmap104.swf
 t/swf/bitmap105.swf
+t/swf/compress001.swf
 t/swf/convert001.swf
 t/swf/edit001.swf
 t/swf/gif001.swf
@@ -200,6 +209,11 @@ t/swf/shape004.swf
 t/swf/shape005.swf
 t/swf/tag001.swf
 t/swf/tag002.swf
+t/swf/tag106.swf
+t/swf/tag107.swf
+t/swf/tag108.swf
+t/tag/contents/saitama.tag.contents.1
+t/tag/contents/saitama.tag.contents.2
 t/tag/textvar.tag.0
 t/tag/textvar.tag.1
 t/tag/textvar.tag.2
@@ -209,6 +223,7 @@ t/tag/textvar.tag.5
 t/tag/textvar.tag.6
 t/tag/textvar.tag.cid.1
 t/Utils.pm
+TESTINFO
 typemap
 XS.xs
 META.yml                                 Module YAML meta-data (added by MakeMaker)
