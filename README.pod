@@ -4,8 +4,10 @@ use 5.008;
 use strict;
 use warnings;
 
-our $VERSION       = '0.04';
-our $SWFED_VERSION = '0.57';
+use Carp;
+
+our $VERSION       = '0.05';
+our $SWFED_VERSION = '0.58';
 
 require XSLoader;
 XSLoader::load('SWFEditor', $VERSION);
@@ -216,7 +218,7 @@ sub _load {
         my $data = $$input;
         return ($data, length $data);
     }
-    open my $fh, $input or die "Can't open file \"$input\" : $!";
+    open my $fh, $input or croak "Can't open file \"$input\" : $!";
     my $data = do { local $/; <$fh> };
     close $fh;
     return ($data, length $data);

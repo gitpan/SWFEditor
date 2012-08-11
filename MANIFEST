@@ -116,6 +116,7 @@ t/01_bitmap002.t
 t/01_bitmap003.t
 t/01_bitmap004.t
 t/01_bitmap005.t
+t/01_bitmap006.t
 t/01_edit001.t
 t/01_edit002.t
 t/01_gif001.t
@@ -127,6 +128,7 @@ t/01_movieclip001.t
 t/01_movieclip002.t
 t/01_movieclip003.t
 t/01_movieclip004.t
+t/01_movieclip005.t
 t/01_png001.t
 t/01_swfinfo001.t
 t/01_tag001.t
@@ -165,6 +167,8 @@ t/resource/4color-300.swf
 t/resource/5.jpg
 t/resource/colorformat.swf
 t/resource/colorformat_trans.swf
+t/resource/font_test.swf
+t/resource/font_test_material.swf
 t/resource/inasahama.gif
 t/resource/negimiku.swf
 t/resource/negimiku001.png
@@ -183,6 +187,7 @@ t/swf/action101.swf
 t/swf/bitmap003.swf
 t/swf/bitmap004.swf
 t/swf/bitmap005.swf
+t/swf/bitmap006.swf
 t/swf/bitmap101.swf
 t/swf/bitmap102.swf
 t/swf/bitmap103.swf
@@ -198,6 +203,7 @@ t/swf/movieclip001.swf
 t/swf/movieclip002.swf
 t/swf/movieclip003.swf
 t/swf/movieclip004.swf
+t/swf/movieclip005.swf
 t/swf/png000.swf
 t/swf/png001.swf
 t/swf/png002.swf
