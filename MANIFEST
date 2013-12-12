@@ -109,6 +109,7 @@ src/y_keyvalue.h
 t/00_compile.t
 t/01_action001.t
 t/01_action002.t
+t/01_action003.t
 t/01_action100.t
 t/01_action101.t
 t/01_bitmap001.t
@@ -177,11 +178,13 @@ t/resource/negimiku2_mcnest.swf
 t/resource/saitama-3.bits
 t/resource/saitama.swf
 t/resource/saitama3.swf
+t/resource/textvar-no0.swf
 t/resource/textvar-noaction.swf
 t/resource/textvar.swf
 t/shape/colorformat.shape.8
 t/swf/action001.swf
 t/swf/action002.swf
+t/swf/action003.swf
 t/swf/action100.swf
 t/swf/action101.swf
 t/swf/bitmap003.swf
